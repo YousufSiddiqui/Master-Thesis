@@ -23,6 +23,10 @@ for(i in 1:length(sessions)){
   
   countPagesRevisitedLastSession=max(feature_data$countPagesRevisitedLastSession)
   sessionCart=max(feature_data$sessionCart)
+  sessionOverview=max(feature_data$sessionOverview)
+  sessionProduct=max(feature_data$sessionProduct)
+  sessionSale=max(feature_data$sessionSale)
+  sessionSearch=max(feature_data$sessionSearch)
   sessionTime=max(feature_data$sessionTime)
   viewCountSession=max(feature_data$viewCountSession)
   clickEventsSession=max(feature_data$clickEventsSession)
@@ -41,6 +45,10 @@ for(i in 1:length(sessions)){
   feat_data2 = rbind(feat_data2,data.frame(sessionID,
                                            countPagesRevisitedLastSession,
                                            sessionCart,
+                                           sessionOverview,
+                                           sessionProduct,
+                                           sessionSale,
+                                           sessionSearch,
                                            sessionTime,
                                            viewCountSession,
                                            clickEventsSession,
