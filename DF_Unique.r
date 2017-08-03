@@ -57,7 +57,9 @@ for(i in 1:length(sessions)){
                                        screenWidth,
                                        sessionStartHour,
                                        visitorKnown,
-                                       weekday
+                                       weekday,
+                                       hurry,
+                                       tabVisible
                                        
                                        
                                        
