@@ -39,6 +39,7 @@ for(i in 1:length(sessions)){
   screenWidth = as.character(unique(feature_data$screenWidth))
   tabVisible = as.character(unique(feature_data$tabVisible))
   visitorKnown = as.character(unique(feature_data$visitorKnown))
+  recencyVisit = as.character(unique(feature_data$recencyVisit))
 
   #df
   feat_data2 = rbind(feat_data2,data.frame(sessionID,
@@ -59,7 +60,8 @@ for(i in 1:length(sessions)){
                                        visitorKnown,
                                        weekday,
                                        hurry,
-                                       tabVisible
+                                       tabVisible,
+                                       recencyVisit    
                                        
                                        
                                        
