@@ -39,7 +39,8 @@ for(i in 1:length(sessions)){
   totPurchasesItems=max(feature_data$totPurchasesItems)
   totViewCount=max(feature_data$totViewCount)                   
   totVisitTime=max(feature_data$totVisitTime)
-  
+  currentViewCountVsPreviousAvg=max(feature_data$currentViewCountVsPreviousAvg)
+  currentVisitLengthVsAvg=max(feature_data$currentVisitLengthVsAvg)
 
   #df
   feat_data2 = rbind(feat_data2,data.frame(sessionID,
@@ -60,7 +61,9 @@ for(i in 1:length(sessions)){
                                            totPurchasesAmount,   
                                            totPurchasesItems,
                                            totViewCount,                  
-                                           totVisitTime
+                                           totVisitTime,
+                                           currentViewCountVsPreviousAvg,
+                                           currentVisitLengthVsAvg
                                        
                                        
                                        
