@@ -40,6 +40,16 @@ for(i in 1:length(sessions)){
   tabVisible = as.character(unique(feature_data$tabVisible))
   visitorKnown = as.character(unique(feature_data$visitorKnown))
   recencyVisit = as.character(unique(feature_data$recencyVisit))
+  month= as.character(unique(feature_data$month))
+  pageCartLV= as.character(unique(feature_data$pageCartLV))
+  pageOverviewLV= as.character(unique(feature_data$pageOverviewLV))
+  pageProductLV= as.character(unique(feature_data$pageProductLV))
+  pageSaleLV= as.character(unique(feature_data$pageSaleLV))
+  pageSearchLV= as.character(unique(feature_data$pageSearchLV))
+  productBasketLV= as.character(unique(feature_data$productBasketLV))
+  purchaseLV= as.character(unique(feature_data$purchaseLV))
+  purchaseRecency= as.character(unique(feature_data$purchaseRecency))
+  visitTimeLV= as.character(unique(feature_data$visitTimeLV))    
 
   #df
   feat_data2 = rbind(feat_data2,data.frame(sessionID,
@@ -61,7 +71,17 @@ for(i in 1:length(sessions)){
                                        weekday,
                                        hurry,
                                        tabVisible,
-                                       recencyVisit    
+                                       recencyVisit,
+                                       month,
+                                        pageCartLV,
+                                        pageOverviewLV,
+                                        pageProductLV,
+                                        pageSaleLV,
+                                        pageSearchLV,
+                                        productBasketLV,
+                                        purchaseLV,
+                                        purchaseRecency,
+                                        visitTimeLV      
                                        
                                        
                                        
