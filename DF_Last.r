@@ -53,7 +53,20 @@ for(i in 1:length(sessions)){
   percPageSearch=tail(feature_data2$percPageSearch)                 
   percPageOverview=tail(feature_data2$percPageOverview)              
   percPageSale=tail(feature_data2$percPageSale)                   
-  percPageCart=tail(feature_data2$percPageCart)  
+  percPageCart=tail(feature_data2$percPageCart)
+  currentViewCountVsLV=tail(feature_data2$currentViewCountVsLV)
+  currentVisittimeVsLV=tail(feature_data2$currentVisittimeVsLV)
+  Kauf=tail(feature_data2$Kauf)
+  pageCartrVisit=tail(feature_data2$pageCartrVisit)
+  pageOverviewrVisit=tail(feature_data2$pageOverviewrVisit)
+  pageProductrVisit=tail(feature_data2$pageProductrVisit)
+  pageSalerVisit=tail(feature_data2$pageSalerVisit)
+  pageSearchrVisit=tail(feature_data2$pageSearchrVisit)
+  totCart=tail(feature_data2$totCart)
+  totOverview=tail(feature_data2$totOverview)
+  totProduct=tail(feature_data2$totProduct)
+  totSale=tail(feature_data2$totSale)
+  totalItemValueBasketSession=tail(feature_data2$otalItemValueBasketSession)
   
 
   #df
@@ -90,7 +103,20 @@ for(i in 1:length(sessions)){
                                            percPageSearch,                 
                                            percPageOverview,              
                                            percPageSale,                   
-                                           percPageCart  
+                                           percPageCart,
+                                           currentViewCountVsLV,
+                                            currentVisittimeVsLV,
+                                            Kauf,
+                                            pageCartrVisit,
+                                            pageOverviewrVisit,
+                                            pageProductrVisit,
+                                            pageSalerVisit,
+                                            pageSearchrVisit,
+                                            totCart,
+                                            totOverview,
+                                            totProduct,
+                                            totSale,
+                                            totalItemValueBasketSession
                                        
                                        
                                        
