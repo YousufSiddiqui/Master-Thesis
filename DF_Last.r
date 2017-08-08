@@ -22,12 +22,7 @@ for(i in 1:length(sessions)){
   #variables where only the last value in the column is required
   
   
- amountBasketSession=tail(feature_data$amountBasketSession,n=1)
-  percPageProduct=tail(feature_data$percPageProduct,n=1)               
-  percPageSearch=tail(feature_data$percPageSearch,n=1)       
-  percPageOverview=tail(feature_data$percPageOverview,n=1)              
-  percPageSale=tail(feature_data$percPageSale,n=1)                   
-  percPageCart=tail(feature_data$percPageCart,n=1)
+  amountBasketSession=tail(feature_data$amountBasketSession,n=1)
   clickEventProduct=tail(feature_data$clickEventProduct,n=1)             
   clickEventSearch=tail(feature_data$clickEventSearch,n=1)              
   clickEventOverview=tail(feature_data$clickEventOverview,n=1)            
@@ -101,11 +96,6 @@ for(i in 1:length(sessions)){
                                            totPercPageSearch,             
                                            totPercPageSale,                
                                            totPercPageCart,
-                                           percPageProduct,                
-                                           percPageSearch,                 
-                                           percPageOverview,              
-                                           percPageSale,                   
-                                           percPageCart,
                                            currentViewCountVsLV,
                                             currentVisittimeVsLV,
                                             Kauf,
