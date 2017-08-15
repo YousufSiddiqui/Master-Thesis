@@ -12,15 +12,21 @@ library(dplyr)
 
 data = read.csv("final_data_tab_1.csv", as.is=T,header=T,sep=",")
 
+### Removing target variable as it turns to 0 when doing outlier imputation
+
+data_cont_Kauf = as.data.frame(data_cont$Kauf)
+
 ## Continous Data ##
 
 # removing varaibles which are not quantitative and making a new data frame
 
-remove_variables = names(data) %in% c("sessionID", "X", "cluster_num", "browser", "operatingSystem","X.1")
+remove_variables = names(data) %in% c("sessionID", "X", "cluster_num", "browser", "operatingSystem","X.1", "Kauf")
 
 # Data set for continous variables
 
 data_cont = data[!remove_variables]
+
+
 
 # Replacing -1 with NA
 str(data_cont)
@@ -64,7 +70,9 @@ table(is.na(data_cont))
 
 data_cont = as.data.frame(data_cont)
 
-### Removing variables with zero or near zero variance - under consideration
+## merging target variable back into df
+
+data_cont = cbind(data_cont,data_cont_Kauf)
 
 
 ###Scaling of Continuous variables
@@ -83,4 +91,4 @@ data_cont = as.data.frame(data_cont)
 ##saving
 write.csv(data_cont,"data_cont_tab_1.csv",row.names=F)
 
-check = read.csv("data_cont_tab_1.csv",as.is=T)
+
