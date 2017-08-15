@@ -4,16 +4,22 @@ library(caret)
 
 data = read.csv("final_data_tab_1.csv", as.is=T,header=T,sep=",")
 
+remove_variables = names(data) %in% c("X","X.1")
+
+data = data[!remove_variables]
 
 ##Combining all datasets 
 
 data_cat = read.csv("data_cat_tab_1.csv",as.is=T)
+
+data_cat$X = NULL
 
 data_cont = read.csv("data_cont_tab_1.csv",as.is=T)
 
 data_final=cbind(data[,c("sessionID")],data_cont,data_cat)
 
 colnames(data_final)[1] <- "sessionID"
+colnames(data_final)[51] <- "Kauf"
 
 data_final = data_final[3:10947,]
 
@@ -87,6 +93,7 @@ data_final_test=data_final[data_final$sample=='test',c(1:ncol(data_final)-1)]
 nrow(data_final_test[data_final_test$Kauf==0,])/nrow(data_final_test)*100
 #93.92417
 
+setwd("C:/Master Thesis/Preprocessed_Data")
 
 ### taking output in CSV format
 write.csv(data_final_train,"preproc_data_train.csv",row.names=F)
