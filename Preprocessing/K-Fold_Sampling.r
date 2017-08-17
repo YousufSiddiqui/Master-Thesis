@@ -16,10 +16,43 @@ data_cat$X = NULL
 
 data_cont = read.csv("data_cont_tab_1.csv",as.is=T)
 
-data_final=cbind(data[,c("sessionID")],data_cont,data_cat)
+data_int=cbind(data_cont,data_cat)
+
+## Removing Variables which have zero variance
+
+var0 <- unlist(lapply(data_int, function(x) 0 == var(if (is.factor(x)) as.integer(x) else x)))
+
+list(var0)
+
+remove_variables = names(data_int) %in% c("device_comp",
+                                      "device_tab",
+                                      "exitEqualLanding", 
+                                      "operatingSystemVersion",
+                                      "visitorKnown",
+                                      "tabVisible",
+                                      "productBasketLV", 
+                                      "purchaseLV")
+
+data_int = data_int[!remove_variables]
+
+## Removing variables with zero variance
+
+cor(data_int)
+
+tmp <- cor(data_int)
+tmp[upper.tri(tmp)] <- 0
+diag(tmp) <- 0
+
+
+data_int <- data_int[,!apply(tmp,2,function(x) any(x > 0.99))]
+head(data_int)
+
+
+data_final=cbind(data[,c("sessionID")],data_int)
+
 
 colnames(data_final)[1] <- "sessionID"
-colnames(data_final)[51] <- "Kauf"
+colnames(data_final)[41] <- "Kauf"
 
 data_final = data_final[3:10947,]
 
