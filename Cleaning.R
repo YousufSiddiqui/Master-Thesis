@@ -101,9 +101,7 @@ corr_matrix = round(corr_matrix, 2)
 
 list_high_corr_var = findCorrelation(corr_matrix, cutoff = .90, verbose = TRUE)
 
-# Removing Variables in: list_high_corr_var
-
-merged_data_cont = merged_data_cont[,-c(42,43,33,32,25)]
+# List returned no variables with correlation greater than .90
 
 # Step 8: Merging Categorical DF, Continous DF and KAUF and Session ID Variables to give a final dataset
 
