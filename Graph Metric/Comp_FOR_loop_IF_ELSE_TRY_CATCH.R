@@ -6,7 +6,7 @@ library(brew)
 library(data.tree)
 library(igraph)
 
-files_dir = ("C:/Master Thesis/Split_Data/100")
+files_dir = ("C:/Split_Data")
 ##loading the names of file in the directory
 setwd(files_dir)
 myFiles = list.files(pattern="*json")
@@ -21,7 +21,7 @@ var.data = NULL
 for (file in myFiles){
   tryCatch({
     print(file)
-  }, error=function(e){cat("ERROR :",conditionMessage(e), "\n")})
+  
   
   
   
@@ -218,12 +218,12 @@ for (file in myFiles){
 										  Diameter,
                                           Radius,
                                           AvgInDegree,
-										  MaxInDegree
-										  MinInDegree
+										  MaxInDegree,
+										  MinInDegree,
                                           AvgOutDegree,
 										  MaxOutDegree,
 										  MinOutDegree,
-										  AvgShortPathLength
+										  AvgShortPathLength,
                                           AvgClosenessCentrality,
 										  MaxClosenessCentrality,
 										  MinClosenessCentrality,
@@ -238,7 +238,7 @@ for (file in myFiles){
 										  AvgEigenValueCentrality,
 										  MaxEigenValueCentrality,
 										  MinEigenValueCentrality,
-										  AvgPageRank
+										  AvgPageRank,
 										  MaxPageRank,
 										  MinPageRank
     ))  
@@ -248,7 +248,7 @@ for (file in myFiles){
     
   }
   
-  
+  }, error=function(e){cat("ERROR :",conditionMessage(e), "\n")})  
   
 }                   
 
