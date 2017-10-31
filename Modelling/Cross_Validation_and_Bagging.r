@@ -9,7 +9,8 @@ setwd(home)
 
 
 setwd(paste(home,'Model',sep=''))
-training_data= read.csv("preproc_data/train.csv",as.is=T)
+
+training_data= read.csv("data_metric_train.csv",as.is=T)
 
 
 
@@ -87,5 +88,5 @@ max_row_num=as.integer(max(as.character(lapply(dflist,function(x)nrow(x)))))
 			
 		}
 		##also saving each fold created from cross validation method
-		write.csv(merge(training_data,dflist[[k]],by=c('sessionID','Kauf')),paste("preproc_data/dfold",k,".csv",sep=''),row.names=F)
+		write.csv(merge(training_data,dflist[[k]],by=c('sessionID','Kauf')),paste("data_metric_dfold",k,".csv",sep=''),row.names=F)
 	}
