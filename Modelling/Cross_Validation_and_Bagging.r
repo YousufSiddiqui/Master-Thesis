@@ -84,7 +84,7 @@ max_row_num=as.integer(max(as.character(lapply(dflist,function(x)nrow(x)))))
 			b=rbind(a,a[sample(1:nrow(a),max_row_num-nrow(a)),])
 			b=merge(training_data,b,by=c('id','dv'))
 			b=b[order(b[,'id']),]
-			write.csv(b, paste("preproc_data/dfold",k,"_bag",l,".csv",sep=''),row.names=F)
+			write.csv(b, paste("data_metric_dfold",k,"_bag",l,".csv",sep=''),row.names=F)
 			
 		}
 		##also saving each fold created from cross validation method
