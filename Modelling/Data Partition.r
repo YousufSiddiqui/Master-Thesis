@@ -13,7 +13,6 @@ data_final$Kauf <- as.factor(data_final$Kauf)
 
 set.seed(123)
 
-data_final = data_final[1:158120,]
 
 devIndex = as.data.frame(createFolds(data_final$Kauf, k= 5,  list = T))
 
