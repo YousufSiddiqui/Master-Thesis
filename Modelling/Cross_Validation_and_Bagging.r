@@ -1,19 +1,8 @@
 rm(list=ls())
 
-user=(Sys.info()[6])
-Desktop=paste("C:/Users/",user,"/Desktop/",sep="")
-
-
-home=paste(Desktop,"MEMS/S4/R Programming/German/",sep="")
-setwd(home)
-
-
-setwd(paste(home,'Model',sep=''))
+setwd("C:/Users/Yousuf/OneDrive/Master Thesis/Data_from_network_drive/Model Ready Data/Metric Split Data")
 
 training_data= read.csv("data_metric_train.csv",as.is=T)
-
-
-
 
 ### Creating samples using methodology of cross validation
 
