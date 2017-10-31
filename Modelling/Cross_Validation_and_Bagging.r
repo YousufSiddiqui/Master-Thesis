@@ -71,8 +71,8 @@ max_row_num=as.integer(max(as.character(lapply(dflist,function(x)nrow(x)))))
 			a=dflist[[k]][sample(1:nrow(dflist[[k]]),floor(runif(1, 67, 70)*nrow(dflist[[k]])/100)),]
 			set.seed(243)
 			b=rbind(a,a[sample(1:nrow(a),max_row_num-nrow(a)),])
-			b=merge(training_data,b,by=c('id','dv'))
-			b=b[order(b[,'id']),]
+			b=merge(training_data,b,by=c('sessionID','Kauf'))
+			b=b[order(b[,'sessionID']),]
 			write.csv(b, paste("data_metric_dfold",k,"_bag",l,".csv",sep=''),row.names=F)
 			
 		}
