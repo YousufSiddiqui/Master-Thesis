@@ -5,11 +5,12 @@ Desktop=paste("C:/Users/",user,"/Desktop/",sep="")
 setwd(Desktop)
 
 
-home=paste(Desktop,"MEMS/S4/R Programming/German/",sep="")
+home=paste(Desktop,"Thesis/",sep="")
 
 setwd(paste(home,'Model',sep=''))
 
-preproc_dir=paste(home,'Model',"/","preproc_data",sep='')
+dir.create("preproc_dir")
+preproc_dir=paste(home,'Model',"/","preproc_dir",sep='')
 dir.create("candidates_val")
 candidates_val=paste(home,'Model',"/","candidates_val",sep='')
 dir.create("candidates_test")
