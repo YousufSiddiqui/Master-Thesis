@@ -36,10 +36,10 @@ data_test = merge( data_final , test_rows,by=c("Kauf","sessionID"))
 
 ##Checking for the target variable distribution in over all dataset
 nrow(data_final[data_final$Kauf==0,])/nrow(data_final)*100
-#86.49674: Metric , 
+#86.49674: Metric , 95.16723: Feature
 
 nrow(data_test[data_test$Kauf==0,])/nrow(data_test)*100
-#86.6883: Metric ,
+#86.6883: Metric , 95.18433: Feature
 
 data_md = merge( data_final , md_rows,by=c("Kauf","sessionID"))
 data_val = merge( data_final , val_rows,by=c("Kauf","sessionID"))
@@ -71,19 +71,19 @@ data_final=full_dv_data
 
 ##Checking for the target variable distribution in over all dataset
 nrow(data_final[data_final$Kauf==0,])/nrow(data_final)*100
-#86.49674: Metric
+#86.49674: Metric, 95.11643: Feature
 
 data_final_train=data_final[data_final$sample=='train',c(1:ncol(data_final)-1)]  
 nrow(data_final_train[data_final_train$Kauf==0,])/nrow(data_final_train)*100
-#86.40972
+#86.40972: Metric, 95.16675: Feature
 
 data_final_val=data_final[data_final$sample=='val',c(1:ncol(data_final)-1)]
 nrow(data_final_val[data_final_val$Kauf==0,])/nrow(data_final_val)*100
-#86.56569
+#86.56569: Metric, 95.11643: Feature 
 
 data_final_test=data_final[data_final$sample=='test',c(1:ncol(data_final)-1)]
 nrow(data_final_test[data_final_test$Kauf==0,])/nrow(data_final_test)*100
-#86.68883
+#86.68883: Metric, 95.16675: Feature
 
 setwd("C:/Users/Yousuf/Desktop")
 
@@ -91,3 +91,6 @@ setwd("C:/Users/Yousuf/Desktop")
 write.csv(data_final_train,file = "data_feat_train.csv",row.names=F)
 write.csv(data_final_val,file ="data_feat_val.csv",row.names=F)
 write.csv(data_final_test,file ="data_feat_test.csv",row.names=F)
+
+
+
