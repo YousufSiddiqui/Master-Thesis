@@ -24,8 +24,8 @@ myFiles = myFiles2 #[grep("g1|g2|g3|g4",myFiles2)]
 a=read.csv(paste(getwd(),'/',myFiles[1],sep=''),as.is=T)
 
 ##creating a matrix of all the possible combinations of parameters we want to run
-rf_parameters=expand.grid(ntree = seq(100,1800,100), mtry = c(floor((ncol(a)-3)/6),floor((ncol(a)-3)/3),floor((ncol(a)-3)*1.5)), nodesize=5)
-
+rf_parameters=expand.grid(ntree = seq(400,1800,300), mtry = c(floor((ncol(a)-3)/3),floor((ncol(a)-3)*1.5)), nodesize=5)
+rf_parameters= rf_parameters[1:9,]
 
 
 library(randomForest)
