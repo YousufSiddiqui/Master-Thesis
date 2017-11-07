@@ -31,7 +31,8 @@ setwd(preproc_dir)
 
 
 ##creating a matrix of all the possible combinations of parameters we want to run
-lr_parameters=expand.grid(lambda = 2^seq(-19,6,2), cp = c("aic","bic"))
+lr_parameters=expand.grid(lambda = 2^seq(-19,-10,2), cp = c("aic","bic"))
+lr_parameters= lr_parameters[1:9,]
 
 ##For user's ease, a progress bar would show how many models have been created
 pb = winProgressBar(title = paste("LogR Progress Bar"), min = 0, max = length(myFiles), width = 400)
