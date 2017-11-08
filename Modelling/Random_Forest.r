@@ -39,8 +39,8 @@ for(j in 1:length(myFiles))
 	{
 		a=read.csv(paste(preproc_dir,'/',myFiles[j],sep=''),as.is=T)
 		colnames(a)=paste(gsub(".","",colnames(a),fixed=TRUE))
-		a$dv=gsub('0','r',a$dv)
-		a$dv=gsub('1','s',a$dv)
+		a$Kauf=gsub('0','r',a$Kauf)
+		a$Kauf=gsub('1','s',a$Kauf)
 		val_data= read.csv(paste(preproc_dir,'/',"val.csv",sep=''),as.is=T)
 		colnames(val_data)=paste(gsub(".","",colnames(val_data),fixed=TRUE))
 		val_data=val_data[,colnames(a)]
