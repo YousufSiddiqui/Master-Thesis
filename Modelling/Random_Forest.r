@@ -7,14 +7,14 @@ setwd(Desktop)
 
 home=paste(Desktop,"Thesis/",sep="")
 
-setwd(paste(home,'Model',sep=''))
+setwd(paste(home,'Model_Metric',sep=''))
 
 dir.create("preproc_dir")
-preproc_dir=paste(home,'Model',"/","preproc_dir",sep='')
+preproc_dir=paste(home,'Model_Metric',"/","preproc_dir",sep='')
 dir.create("candidates_val")
-candidates_val=paste(home,'Model',"/","candidates_val",sep='')
+candidates_val=paste(home,'Model_Metric',"/","candidates_val",sep='')
 dir.create("candidates_test")
-candidates_test=paste(home,'Model',"/","candidates_test",sep='')
+candidates_test=paste(home,'Model_Metric',"/","candidates_test",sep='')
 
 
 setwd(preproc_dir)
