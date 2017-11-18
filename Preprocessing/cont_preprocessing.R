@@ -74,20 +74,6 @@ data_cont = as.data.frame(data_cont)
 
 data_cont = cbind(data_cont,data_cont_Kauf)
 
-
-###Scaling of Continuous variables
-
-##MinMaxScaling (-1 to 1)
-
-#min_max_scaling=function(col)((col-min(col))/(max(col)-min(col))*2-1)
-
-##check
-#min_max_scaling(c(1,2,3,4))
-# [1] -1.0000000 -0.3333333  0.3333333  1.0000000
-
-	
-#data_cont = sapply(data_cont,function(col)min_max_scaling(col))
-
 ##saving
 write.csv(data_cont,"data_cont_tab_1.csv",row.names=F)
 
