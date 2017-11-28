@@ -116,15 +116,14 @@ nrow(data_final[data_final$Kauf==0,])/nrow(data_final)*100
 
 data_final_train=data_final[data_final$sample=='train',c(1:ncol(data_final)-1)]  
 nrow(data_final_train[data_final_train$Kauf==0,])/nrow(data_final_train)*100
-#92.93437
+
 
 data_final_val=data_final[data_final$sample=='val',c(1:ncol(data_final)-1)]
 nrow(data_final_val[data_final_val$Kauf==0,])/nrow(data_final_val)*100
-#93.2846
+
 
 data_final_test=data_final[data_final$sample=='test',c(1:ncol(data_final)-1)]
 nrow(data_final_test[data_final_test$Kauf==0,])/nrow(data_final_test)*100
-#93.92417
 
 setwd("C:/Master Thesis/Preprocessed_Data")
 
