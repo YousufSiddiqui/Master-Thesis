@@ -12,7 +12,7 @@ dat_dv=data_final_train[,c("Kauf","sessionID")]
 
 
 
-###Creating folds manually with control on dv
+###Creating folds manually with control on dependent variable
 
 set.seed(243)
 rand_num=c(sample(c(1:length(which(dat_dv$Kauf==0)))),sample(c(1:length(which(dat_dv$Kauf==1)))))  
