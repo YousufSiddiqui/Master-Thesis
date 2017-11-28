@@ -33,9 +33,9 @@ data_val = merge( data_final , val_rows,by=c("Kauf","sessionID"))
 data_test = merge( data_final , test_rows,by=c("Kauf","sessionID"))
 
 
-##Checking for the target variable distribution in over all dataset
+##Checking target variable distribution in dataset
 nrow(data_final[data_final$Kauf==0,])/nrow(data_final)*100
-#95.8937
+
 
 nrow(data_test[data_test$Kauf==0,])/nrow(data_test)*100
 
@@ -46,13 +46,6 @@ Kauf.rf <- randomForest(Kauf ~ ., data = data_test, ntree = 2000, mtry = 11,
 
 save(Kauf.rf,file = "Kaufrf2.RData")
 varImpPlot(Kauf.rf, sort = TRUE)
-
-# write the variable importance to a file that can be read into excel
-fileOut <- file("rrf2.txt", "w")
-imp <- importance(Kauf.rf, type = 1, csle = TRUE);
-write.table(imp, fileOut, sep="\t", dec=",")
-flush(fileOut)
-close(fileOut)
 
 
 
