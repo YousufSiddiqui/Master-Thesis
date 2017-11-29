@@ -1,6 +1,6 @@
 Name of Quantlet: Feature Extraction
 
-Description: Contains for setting up clickstream data and extracting relevant graph metrics from it
+Description: Contains code for extracting features according to their type i.e: identical, maximum and unique
 
 Author: Yousuf Siddiqui
 
